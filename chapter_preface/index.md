@@ -1,391 +1,465 @@
-# Preface
+# تمهيد
 
-Just a few years ago, there were no legions of deep learning scientists
-developing intelligent products and services at major companies and startups.
-When the youngest among us (the authors) entered the field,
-machine learning did not command headlines in daily newspapers.
-Our parents had no idea what machine learning was,
-let alone why we might prefer it to a career in medicine or law.
-Machine learning was a forward-looking academic discipline
-with a narrow set of real-world applications.
-And those applications, e.g., speech recognition and computer vision,
-required so much domain knowledge that they were often regarded
-as separate areas entirely for which machine learning was one small component.
-Neural networks then, the antecedents of the deep learning models
-that we focus on in this book, were regarded as outmoded tools.
-
-
-In just the past five years, deep learning has taken the world by surprise,
-driving rapid progress in fields as diverse as computer vision,
-natural language processing, automatic speech recognition,
-reinforcement learning, and statistical modeling.
-With these advances in hand, we can now build cars that drive themselves
-with more autonomy than ever before (and less autonomy
-than some companies might have you believe),
-smart reply systems that automatically draft the most mundane emails,
-helping people dig out from oppressively large inboxes,
-and software agents that dominate the world's best humans
-at board games like Go, a feat once thought to be decades away.
-Already, these tools exert ever-wider impacts on industry and society,
-changing the way movies are made, diseases are diagnosed,
-and playing a growing role in basic sciences---from astrophysics to biology.
+قبل بضع سنوات فقط ، لم يكن هناك جحافل من علماء التعلم العميق
+يطورون منتجاتٍ وخدماتٍ ذكيةٍ في الشركات الكبرى والشركات الناشئة.
+عندما دخل أصغرنا (المؤلفون) إلى الميدان،
+لم يكن التعلم الآلي يتصدر عناوين الصحف اليومية.
+لم يكن لدى والدينا أي فكرة عن ماهية التعلم الآلي،
+ناهيك عن سبب تفضيلِنا له على مهنة في الطب أو القانون.
+كان التعلم الآلي تخصُّصًا أكاديميًا تطلُّعيًا
+مع مجموعة ضيقة من التطبيقات الواقعية.
+وتلك التطبيقات، على سبيل المثال، التعرف على الكلام ورؤية الكمبيوتر،
+كانت تتطلَّبُ الكثير من المعرفة بالمجال بحيث كان يُنظر إليها غالبًا
+كمجالات منفصلة تمامًا و كان التّعلم الآلي يُعتبر مكوِّنًا صغيرًا لها.
+و حينها كانت الشبكات العصبية، وهي أسلاف نماذجِ التعلُّم العميق
+التي نركِّز عليها في هذا الكتاب، تُعتبر أدواتٍ عفا عليها الزمن.
 
 
-
-## About This Book
-
-This book represents our attempt to make deep learning approachable,
-teaching you both the *concepts*, the *context*, and the *code*.
-
-### One Medium Combining Code, Math, and HTML
-
-For any computing technology to reach its full impact,
-it must be well-understood, well-documented, and supported by
-mature, well-maintained tools.
-The key ideas should be clearly distilled,
-minimizing the onboarding time needing to bring new practitioners up to date.
-Mature libraries should automate common tasks,
-and exemplar code should make it easy for practitioners
-to modify, apply, and extend common applications to suit their needs.
-Take dynamic web applications as an example.
-Despite a large number of companies, like Amazon,
-developing successful database-driven web applications in the 1990s,
-the potential of this technology to aid creative entrepreneurs
-has been realized to a far greater degree in the past ten years,
-owing in part to the development of powerful, well-documented frameworks.
+في السنوات الخمس الماضية فقط، فاجأ التعلُّم العميق العالم،
+ممّا أدّى إلى تقدُّمٍ سريعٍ في مجالاتٍ متنوِّعة مثل رؤية الكمبيوتر
+ومعالجة اللغة الطبيعية والتعرُّفِ التلقائي على الكلام
+والتعلُّم المعزز والنمذجة الإحصائية.
+مع هذه التطورات في متناول اليد، يمكننا الآن بناء سيارات تقود نفسها
+باستقلالية أكثر من أي وقت مضى (واستقلالية أقلَّ مِمَّا تُريدُك بعض الشركات أن تعتقده)،
+أنظمة الردّ الذكيَّةِ الّتي تقوم تِلقائيًا بصياغة مُعظم رسائل البريدِ الإلكتروني العادية،
+ممّا يساعد النّاس على الخروج من أزمة الصناديق البريد الإلكتروني الوارد المُكتضّة،
+وعُمّال مُبرمجون قادرون على الهيمنة على أفضل البشر في العالم في
+ألعاب الطاولة مِثل لُعبة Go، وهو إنجاز كُنّا نعتقِدُ في السّابق أنّهُ بعيدٌ لعقود.
+بالفعل، تمارسُ هذه الأدوات تأثيراتٍ واسعة النِّطاق على الصناعة والمجتمع،
+وفهي قد غيَّرت طريقة صِناعة الأفلام، وتشخيصِ الأمراض،
+وتلعب دورًا متزايدًا في العلومِ الأساسية --- من الفيزياء الفلكيّة إلى علم الأحياء.
 
 
-Testing the potential of deep learning presents unique challenges
-because any single application brings together various disciplines.
-Applying deep learning requires simultaneously understanding
-(i) the motivations for casting a problem in a particular way;
-(ii) the mathematics of a given modeling approach;
-(iii) the optimization algorithms for fitting the models to data;
-and (iv) and the engineering required to train models efficiently,
-navigating the pitfalls of numerical computing
-and getting the most out of available hardware.
-Teaching both the critical thinking skills required to formulate problems,
-the mathematics to solve them, and the software tools to implement those
-solutions all in one place presents formidable challenges.
-Our goal in this book is to present a unified resource
-to bring would-be practitioners up to speed.
+
+## حول هذا الكتاب
+
+يُمثِّلُ هذا الكتابُ محاولتنا لجعلِ التعلُّم العميقِ سهل المنال،
+حيثُ نسعى إلى تعليمِكَ *المفاهيم* ، *السِّياق* و *التّعليمات البرمجيّة*.
+
+### وسيلة واحدة تجمع بين التعليمات البرمجيّة والرياضيات و HTML
+
+لكي تصل أي تقنية حوسبة إلى تأثيرها الكامل،
+يجبُ أن تكون مفهومةً جيِّدًا ومُوثَّقة جيدًا ومدعومة
+بأدوات ناضجة وجيدة الصيانة.
+يجبُ أن تكون الأفكار الرئيسية موجزة و مُفسّرةً بوضوح،
+ممّا يُقلِّل من وقتِ الإعداد اللازم لتدريب الممارسين الجدد.
+يجب أن تقوم المكتبات الناضجة بأَتمَتَةِ المهامِّ الشائعة،
+ويجب أن تسهل التعليمات البرمجية النموذجية على الممارسين
+تعديل التطبيقات الشائعة وتطبيقها وإثرائها بخصائص إضافيّة لتُناسِب احتياجاتهم.
+خذ تطبيقات الويب الديناميكية كمثال.
+على الرغم من وجود عدد كبير من الشركات، مثل Amazon،
+التي طوَّرت تطبيقاتِ ويب ناجحة تعتمد على قواعد البيانات في التسعينيات،
+إلّا أنّ إمكانات هذه التكنولوجيا على مُساعدة رُوّادِ الأعمالِ المُبدعين
+قد استُخدمت لتحقيق الكثير من النجاحات بدرجةٍ أكبر بكثير في السنوات العشر الماضية،
+ويرجِعُ ذلك جُزئيًا إلى تطوير حِزمٍ و أطُر برمجيّة قوية ومُوثَّقة بشكل جَيِّد.
 
 
-We started this book project in July 2017 when we needed
-to explain MXNet's (then new) Gluon interface to our users.
-At the time, there were no resources that simultaneously
-(i) were up to date; (ii) covered the full breadth
-of modern machine learning with substantial technical depth;
-and (iii) interleaved exposition of the quality one expects
-from an engaging textbook with the clean runnable code
-that one expects to find in hands-on tutorials.
-We found plenty of code examples for
-how to use a given deep learning framework
-(e.g., how to do basic numerical computing with matrices in TensorFlow)
-or for implementing particular techniques
-(e.g., code snippets for LeNet, AlexNet, ResNets, etc)
-scattered across various blog posts and GitHub repositories.
-However, these examples typically focused on
-*how* to implement a given approach,
-but left out the discussion of *why* certain algorithmic decisions are made.
-While some interactive resources have popped up sporadically
-to address a particular topic, e.g., the engaging blog posts
-published on the website [Distill](http://distill.pub), or personal blogs,
-they only covered selected topics in deep learning,
-and often lacked associated code.
-On the other hand, while several textbooks have emerged,
-most notably :cite:`Goodfellow.Bengio.Courville.2016`,
-which offers a comprehensive survey of the concepts behind deep learning,
-these resources do not marry the descriptions
-to realizations of the concepts in code,
-sometimes leaving readers clueless as to how to implement them.
-Moreover, too many resources are hidden behind the paywalls
-of commercial course providers.
+يُبرز اختبارُ إمكانات التعلُّم العميق تحديات فريدة
+لأن أيّ تطبيق فرديٍّ لهُ يتطلّبُ الجمع بين عدّةِ تخصُّصاتٍ مُختلفة.
+يتطلّب تطبيق التعلم العميق فهمًا متزامنًا
+(1) للدوافع المُؤدّية لصِياغَةِ مُشكلَةٍ بطريقةٍ مُعيّنة؛
+(2) الرِّياضِيَّات الخاصّة بنهجِ نمذجة مُعَيّن؛
+(3) خوارزميات التّحسين المسُتعلمة لتُلائِمَ النّماذج مع البيانات؛
+و (4) المعرفة الهندسية اللازمة لتدريب النّماذج بكفاءة،
+وتجنُّب عثرات الحوسبة الرقميّة
+وتحقيق أقصى استفادة من القُدرة الحسابيّة للأجهزة المُتاحة.
+يُمثِّلُ تدريسُ كُلٍّ مِن مهاراتِ التّفكيرِ النّقدي المطلوبة لصياغة المشكلات،
+والرياضيات لحلِّها، والأدوات البرمجية لتنفيذ هذه
+الحلول في مكان واحدٍ تحدِّيًا هائلاً.
+هدفنا في هذا الكتاب هو تقديم مَورِدٍ مُوَحَّدٍ
+لإطلَاعِ المُمارِسينَ المُحتملين على آخر التطوُّرات في مجال التعلُّم العميق.
 
-We set out to create a resource that could
-(1) be freely available for everyone;
-(2) offer sufficient technical depth to provide a starting point on the path
-to actually becoming an applied machine learning scientist;
-(3) include runnable code, showing readers *how* to solve problems in practice;
-(4) that allowed for rapid updates, both by us
-and also by the community at large;
-and (5) be complemented by a [forum](http://discuss.mxnet.io)
-for interactive discussion of technical details and to answer questions.
+في الوقت الذي بدأنا فيه مشروع الكتاب هذا،
+لم تكُن هُناك موارد
+(1) حديثة؛ (2) و تُغطّي النطاق الكامل للتطوُّرات
+الحديثة للتعلُّم الآلي بتعمُّق كبير في التفاصيل التقنيّة؛
+مع (3) عرض مُتكامل بالجودة التي يتوقعها المرء
+من كتاب مدرسي مُمتع مع التعليمات البرمجيّة (الأكواد) الواضحة، سهلة الفهم، و القابلة للتشغيل
+التي يتوقّعُ المرء أن يجدها في البرامج التعليمية العمليَّة.
+لقد وجدنا الكثير من أمثلة التعليمات البرمجية
+لكيفية استخدام مكتبة برمجيّة ما من تلك المُتاحة في مجال التعلّم العميق
+(على سبيل المثال، كيفيّة إجراء الحوسبة الرقمية الأساسية باستخدام المصفوفات في TensorFlow)
+أو لتنفيذ تقنيات أو نماذج مُعيّنة
+(على سبيل المثال، مقتطفات التعليمات البرمجية لـ LeNet و AlexNet و ResNets وما إلى ذلك)
+المنتشرة عبر العديد من مقالات المدونات ومستودعات GitHub.
+ومع ذلك، ركّزت هذه الأمثلة عادةً على
+*كيفية* تنفيذ نهج أو طريقة مُعيّنة،
+لكنّها استبعدت مناقشة *لماذا* يتمّ اتخاذُ قراراتٍ حسابية مُعينة.
+بينما ظهرت بعض الموارد التفاعلية بشكل متقطِّع
+لمُعالجة موضوعٍ مُعيّن، على سبيل المثال، المقالات المُتقنة و الممُتعة
+المنشورة على موقِع الويب [Distill](http://distill.pub)، أو المدَوّنات الشخصية،
+إلّا أنها تناولت مواضيع مُحددة فقط في التعلُّم العميق،
+وغالبًا ما تفتقر إلى التعليمات البرمجية المُتعلّقة بها.
+من ناحية أخرى، بينما ظهرت العديد من الكتب المدرسية،
+وأبرزها :cite:`Goodfellow.Bengio.Courville.2016`،
+الّذي يُقدِّم مسحًا شاملاً للمفاهيم النظريّة الكامنة وراء التعلُّم العميق، فإنَّ
+هذه الموارِد لا تقرِنُ التفسير النظري
+بالتنفيذ العملي للمفاهيم على شكل تعليمات برمجيّة (أكواد)،
+ممّا يترُك القُرَّاء أحيانًا جاهلين بكيفيّةِ تنفيذها.
+علاوة على ذلك، يتمُّ إخفاءُ عددٍ كبير جِدًا من الموارد المعرفيّة خلف جِدار الدّفع
+الموضوع حول الدّوَراتِ التدريبيَّةِ التِّجاريّة.
 
-These goals were often in conflict.
-Equations, theorems, and citations are best managed and laid out in LaTeX.
-Code is best described in Python.
-And webpages are native in HTML and JavaScript.
-Furthermore, we want the content to be
-accessible both as executable code, as a physical book,
-as a downloadable PDF, and on the internet as a website.
-At present there exist no tools and no workflow
-perfectly suited to these demands, so we had to assemble our own.
-We describe our approach in detail in :numref:`sec_how_to_contribute`.
-We settled on Github to share the source and to allow for edits,
-Jupyter notebooks for mixing code, equations and text,
-Sphinx as a rendering engine to generate multiple outputs,
-and Discourse for the forum.
-While our system is not yet perfect,
-these choices provide a good compromise among the competing concerns.
-We believe that this might be the first book published
-using such an integrated workflow.
+شرعنا في إنشاء مورد يُمكن أن
+(1) يكون مُتاحًا مجانًا للجميع؛
+(2) يُوفِّر عُمقًا تقنيًا كافيًا بحيثُ يكون نُقطة انطلاقٍ على الطّريق
+لتُصبح بالفعلِ عالمًا في مجالِ التعلُّم الآلي التطبيقي؛
+(3) يُضمِّنَ التعليماتِ البرمجيَّةَ القابلة للتشغيل، والّتي توضِّحُ للقُرّاء *كيفية* حلِّ المُشكلات عند الممارسة العمليّة؛
+(4) السماح بالتحديثات السّريعة، سواءً من جانبنا
+أو من قِبلِ المُجتمع ككُل؛
+و (5) استكماله بـ [منتدى](http://discuss.d2l.ai)
+للمُناقشة التّفاعُليّة للتفاصيل التّقنية وللإجابة على الأسئلة.
 
-
-### Learning by Doing
-
-Many textbooks teach a series of topics, each in exhaustive detail.
-For example, Chris Bishop's excellent textbook :cite:`Bishop.2006`,
-teaches each topic so thoroughly, that getting to the chapter
-on linear regression requires a non-trivial amount of work.
-While experts love this book precisely for its thoroughness,
-for beginners, this property limits its usefulness as an introductory text.
-
-In this book, we will teach most concepts *just in time*.
-In other words, you will learn concepts at the very moment
-that they are needed to accomplish some practical end.
-While we take some time at the outset to teach
-fundamental preliminaries, like linear algebra and probability,
-we want you to taste the satisfaction of training your first model
-before worrying about more esoteric probability distributions.
-
-Aside from a few preliminary notebooks that provide a crash course
-in the basic mathematical background,
-each subsequent chapter introduces both a reasonable number of new concepts
-and provides single self-contained working examples---using real datasets.
-This presents an organizational challenge.
-Some models might logically be grouped together in a single notebook.
-And some ideas might be best taught by executing several models in succession.
-On the other hand, there is a big advantage to adhering
-to a policy of *1 working example, 1 notebook*:
-This makes it as easy as possible for you to
-start your own research projects by leveraging our code.
-Just copy a notebook and start modifying it.
-
-We will interleave the runnable code with background material as needed.
-In general, we will often err on the side of making tools
-available before explaining them fully (and we will follow up by
-explaining the background later).
-For instance, we might use *stochastic gradient descent*
-before fully explaining why it is useful or why it works.
-This helps to give practitioners the necessary
-ammunition to solve problems quickly,
-at the expense of requiring the reader
-to trust us with some curatorial decisions.
-
-Throughout, we will be working with the MXNet library,
-which has the rare property of being flexible enough for research
-while being fast enough for production.
-This book will teach deep learning concepts from scratch.
-Sometimes, we want to delve into fine details about the models
-that would typically be hidden from the user
-by Gluon's advanced abstractions.
-This comes up especially in the basic tutorials,
-where we want you to understand everything
-that happens in a given layer or optimizer.
-In these cases, we will often present two versions of the example:
-one where we implement everything from scratch,
-relying only on the NumPy interface and automatic differentiation,
-and another, more practical example,
-where we write succinct code using Gluon.
-Once we have taught you how some component works,
-we can just use the Gluon version in subsequent tutorials.
+كانت هذه الأهداف غالبًا متضاربة.
+حيثُ أنّ أفضل طريقة لإدارة المُعادلات والنظريات والاستشهادات هي باستعمال LaTeX.
+بينما أفضل وصف للتعليمات البرمجيّة في Python.
+بينما صفحات الويب يُمكن تنسيقها بشكل أفضل في HTML و JavaScript.
+علاوة على ذلك، نريد أن يكون كُلُّ المُحتوى
+مُتاحًا بسهولة سواءً أكان رمزًا للتنفيذ أو كتابًا ماديًا أو
+ملفَّ PDF قابل للتّنزيل أو على الإنترنت كموقع ويب.
+في الوقت الحالي، لا توجدُ أدواتُ أو طريقة تسيير عمل
+مُناسبة تمامًا لهذه المُتطلّبات، لذلك كان علينا تجميع أدواتنا الخاصة.
+نصِفُ نهج العَملِ المُتبّع بالتفصيل في :numref:`sec_how_to_contribute`.
+و لمُشاركة المصدر والسماح بإجراء تعديلات قررّنا استعمال GitHub،
+ودفاتِر Jupyter لتنسيق التعليمات البرمجيّة والمُعادلات والنّصوص بشكل مُتكامل و أنيق، و
+Sphinx كمحرّك عرضٍ لتوليدِ مُخرجاتٍ مُتعدِّدة،
+و Discourse كمُنتدى.
+في حين أن نظامنا ليس مثاليًا بعد، فإنّ
+هذه الخيارات تُوَفِّرُ حلاًّ وسطًا جيِّدًا بين المُتطلّبات المتنافسة.
+نعتقد أن هذا قد يكون أول كتاب يتم نشره
+باستخدام طريقة تسيير عملٍ مُتكاملة كهذه.
 
 
-### Content and Structure
+### التعلم بالمُمارسة
 
-The book can be roughly divided into three parts,
-which are presented by different colors in :numref:`fig_book_org`:
+تُدرِّسُ العديدُ من الكُتب المدرسية سلسلة من الموضوعات، كُلٌّ منها بالتفصيل الشّامل.
+على سبيل المثال، الكتاب المدرسي الممتاز لكريس بيشوب :cite:`Bishop.2006`،
+يُعلِّمُ كُلَّ موضوعٍ بشكل شامل و مُعمّق، لدرجةِ أنّ الوصولَ إلى فصلِ
+الانحدارِ الخطِّي يتطلَّبُ قدرًا غير ضئيلٍ مِن العمل.
+بينما يُحبُّ الخبراء هذا الكتاب على وجه التحديد لِشُموليَّتِه،
+فإنّ هذه الخاصيَّة، بالنسبة للمُبتدئين، تَحُدُّ مِن فائدتِه كنصٍّ تمهيدِيٍّ.
+
+في هذا الكتاب، سنقوم بتدريس معظم المفاهيم *في الوقت المناسب*.
+بمعنى آخر، ستتعلَّمُ المفاهيم في نفس اللحظة
+الّتي تكونُ فيها ضروريّةً لتحقيق بعضِ الأهداف العمليَّة.
+بينما نأخذ بعض الوقت في البداية لتدريس المُقدِّمات
+الأساسية، مثل الجبر الخطِّي والاحتمال،
+نُريدُك أن تتذوَّقَ الرِّضا بتدريبِ نموذَجك الأوّل
+قبل القلق بشأن المزيد من التوزيعات الاحتمالية الباطنية.
+
+بصرف النظر عن بعض دفاتر الملاحظات الأولية التي تُوَفِّر دورةً تدريبية مُكثّفة
+في للمفاهيم الرياضية الأساسية، يُقدِّمُ
+كلُّ فصل لاحق عددًا معقولًا من المفاهيم الجديدة
+ويُوَفِّر أمثلة عمل فردية قائمة بذاتها --- باستخدام مجموعات بيانات حقيقية.
+هذا يمثل تحديا تنظيميا.
+قد يتم بشكل منطقي تجميع بعض النماذج معًا في دفتر ملاحظات واحد.
+وأفضل طريقة لتدريس بعض الأفكار هي تنفيذ عدة نماذج متتالية.
+من ناحية أخرى، هُناك ميزة كبيرة للالتزام
+بسياسة *مثال عملي واحد، دفتر ملاحظات واحد*:
+هذا يجعل الأمر سهلاً قدر الإمكان بالنسبة لك
+لبدء مشاريع البحث الخاصة بك من خلال الاستفادة من التعليمات البرمجية الخاصة بنا.
+فقط انسخ دفتر ملاحظاتٍ وابدأ في تعديله.
+
+سنقومُ بإدخال الشفرة القابلة للتشغيل مع مواد المعرفيّة اللازمة حسب الحاجة.
+بشكل عام ، غالبًا ما نخطئ في جانب إتاحة الأدوات
+قبل شرحها بالكامل (وسنتابع ذلك
+بشرح الخلفية لاحقًا).
+على سبيل المثال، قد نستخدم *الانحدار المُتدرِّج العشوائي*
+قبل شرحِ سبب فائدته أو سبب نجاحه بشكل كامل.
+يساعد هذا في إعطاء الممارسين الذخيرة اللازمة
+لحلِّ المُشكلات بسرعة،
+على حساب مطالبة القارئ
+بالثقة بنا في بعض القرارات التنظيمية.
+
+سوف يُعلِّمُ هذا الكتاب مفاهيم التعلُّم العميق من الصفر.
+في بعض الأحيان، نُريدُ الخوضَ في تفاصيلَ دقيقةٍ حول النماذج
+التي عادةً ما تكون مخفيّةً عن المُستخدم من
+بسبب التجريدات المتقدمة في المكتبات البرمجيّة للتعلُّم العميق.
+يظهر هذا بشكل خاص في البرامج التعليمية الأساسية،
+حيثُ نريد منك أن تفهم كُلَّ
+ما يحدثُ في طبقة أو مُحسِّنٍ مُعيّن.
+في هذه الحالات، سنُقدِّمُ غالبًا نُسخَتينِ مِنَ المِثال:
+في أحدهما ننفذ كل شيء من البداية،
+ونعتمد فقط على واجهة NumPy والتفاضل التلقائي،
+ومثال آخر أكثر عمليّة،
+حيثُ نكتُب رمزًا موجزًا ​​باستخدام Gluon.
+بمجرّدِ أن نُعلِّمك كيفية عملِ بعضِ المُكوِّناتِ،
+يُمكننا فقط استخدام إصدار Gluon في البرامج التعليمية اللاحقة.
+
+
+### المحتوى والبنية
+
+يُمكِنُ تقسيمُ الكتابِ تقريبًا إلى ثلاثة أجزاء،
+والتي يتمُّ إبرازُها بألوان مُختلفة في :numref:`fig_book_org`:
 
 ![Book structure](../img/book-org.svg)
 :label:`fig_book_org`
 
 
-* The first part covers basics and preliminaries.
-:numref:`chap_introduction` offers an introduction to deep learning.
-Then, in :numref:`chap_preliminaries`,
-we quickly bring you up to speed on the prerequisites required
-for hands-on deep learning, such as how to store and manipulate data,
-and how to apply various numerical operations based on basic concepts
-from linear algebra, calculus, and probability.
-:numref:`chap_linear` and :numref:`chap_perceptrons`
-cover the most basic concepts and techniques of deep learning,
-such as linear regression, multilayer perceptrons and regularization.
+* الجزء الأول يغطي الأساسيات و التمهيدات.
+:numref:`chap_introduction` يعرِضُ مُقدِّمةً للتعلُّم العميق.
+ثم ، في :numref:`chap_preliminaries` ، نطلعك
+سريعًا على المُتطلِّباتِ الأساسية اللازمة
+لتطبيق التعلم العميق بشكل عملي، مثل كيفيّة تخزين البيانات ومعالجتها،
+وكيفية تطبيق العمليات الرقميّة المُختلفة بناءً على المفاهيم الأساسية
+من الجبر الخطي وحساب التفاضل والتكامل والاحتمال.
+:numref:`chap_linear`  و :numref:`chap_perceptrons`
+تغطي المفاهيم الأساسية وتقنيات التعلّم العميق،
+مثل الانحدار الخطّي، والمُدرِكَات مُتعدِدَة الطبقات، والضّبط.
 
-* The next five chapters focus on modern deep learning techniques.
-:numref:`chap_computation` describes the various key components of deep
-learning calculations and lays the groundwork
-for us to subsequently implement more complex models.
-Next, in :numref:`chap_cnn` and :numref:`chap_modern_cnn`,
-we introduce convolutional neural networks (CNNs), powerful tools
-that form the backbone of most modern computer vision systems.
-Subsequently, in :numref:`chap_rnn` and :numref:`chap_modern_rnn`, we introduce
-recurrent neural networks (RNNs), models that exploit
-temporal or sequential structure in data, and are commonly used
-for natural language processing and time series prediction.
-In :numref:`chap_attention`, we introduce a new class of models
-that employ a technique called attention mechanisms
-and they have recently begun to displace RNNs in natural language processing.
-These sections will get you up to speed on the basic tools
-behind most modern applications of deep learning.
+* تُركّز الفصول الخمسة التالية على تقنيات التعلّم العميق الحديثة.
+:numref:`chap_computation` يصفُ المكوّنات الرئيسيّة المختلفة في حسابات
+التعلم العميق ويضعُ الأساس
+لنا لتنفيذ نماذج أكثر تعقيدًا لاحقًا.
+بعد ذلك ، في :numref:`chap_cnn` و :numref:`chap_modern_cnn`،
+نقدِّمُ الشبكات العصبية التلافيفية (CNNs)، وهي أدواتٌ قويةٌ
+تُشكِّلُ العمود الفقري لمُعظم أنظمة الرُّؤية الحاسوبية الحديثة.
+بعد ذلك ، في :numref:`chap_rnn` و :numref:`chap_modern_rnn`، نقدِّمُ
+الشبكات العصبية المتكرِّرة (RNNs)، وهي نماذج تستغل
+البنية الزمنية أو المتسلسلة في البيانات، وتُستخدم بشكل شائع
+لمُعالجة اللُّغة الطبيعية وتنبُّؤ السلاسل الزمنية.
+في :numref:`chap_attention`، نُقدِّمُ فئة جديدة من النماذج
+التي تستخدم تقنية تُسمى آليّات الانتباه،
+وقد بدأت مؤخرًا في استبدال RNNs في معالجة اللغة الطبيعية.
+ستجعلك هذه الأقسام على علم بالأدوات الأساسية
+وراء معظم التطبيقات الحديثة للتعلُّم العميق.
 
-* Part three discusses scalability, efficiency, and applications.
-First, in :numref:`chap_optimization`,
-we discuss several common optimization algorithms
-used to train deep learning models.
-The next chapter, :numref:`chap_performance` examines several key factors
-that influence the computational performance of your deep learning code.
-In :numref:`chap_cv` and :numref:`chap_nlp`, we illustrate
-major applications of deep learning in computer vision
-and natural language processing, respectively.
+* الجزء الثالث يناقش قابلية التوسّع والكفاءة والتطبيقات.
+أولاً ، في :numref:`chap_optimization`،
+نناقش العديد من خوارزميات التحسين الشائعة
+المُستخدمة لتدريبِ نماذِج التعلّم العميق.
+الفصل التالي ، :numref:`chap_performance` يفحص العديد من العوامل الرئيسية
+التي تؤثِّرُ على الأداء الحسابي لبرمجيّة التعلُّم العميق الخاص بك.
+في :numref:`chap_cv`،
+نوضِّحُ
+التطبيقات الرئيسية للتعلُّم العميق في رؤية الكمبيوتر.
+في :numref:`chap_nlp_pretrain` و :numref:`chap_nlp_app`،
+نعرض كيفية القيام بالتّدريب المُسبق لنماذج تمثيل اللُّغة وتطبيقها
+على مهام معالجة اللغة الطبيعية.
 
 
-
-### Code
+### الكود
 :label:`sec_code`
 
-Most sections of this book feature executable code because of our belief
-in the importance of an interactive learning experience in deep learning.
-At present, certain intuitions can only be developed through trial and error,
-tweaking the code in small ways and observing the results.
-Ideally, an elegant mathematical theory might tell us
-precisely how to tweak our code to achieve a desired result.
-Unfortunately, at present, such elegant theories elude us.
-Despite our best attempts, formal explanations for various techniques
-are still lacking, both because the mathematics to characterize these models
-can be so difficult and also because serious inquiry on these topics
-has only just recently kicked into high gear.
-We are hopeful that as the theory of deep learning progresses,
-future editions of this book will be able to provide insights
-in places the present edition cannot.
+تحتوي معظم أقسام هذا الكتاب على كود قابل للتنفيذ، ذلك لإيماننا
+بأهمية خَوض تجربة التعلُّم التفاعلي لإتقان مفاهيم و كيفيّة تطبيق التعلُّم العميق.
+في الوقت الحاضر، لا يُمكن تطوير حدس مُعيَّن إلّا من خلال التجربة والخطأ،
+وتعديل الكود بشكل طفيف ومُراقبة النتائج.
+بشكل مثالي، قد تُخبرنا نظريةٌ رياضيةٌ أنيقةٌ
+بدقّةٍ عن كيفيّة تعديل الكود الخاص بنا لتحقيق النتيجة المرجوة.
+لسوء الحظ، في الوقت الحاضر، هذه النظريّات الأنيقة تستعصي عنّ الإيجاد.
+على الرغم من أفضل محاولاتنا، لا تزال التفسيرات النظريّة الرسميّة لمُختلف التقنيات
+غير متوفرة، وذلك لأن الرياضيات لتوصيف هذه النماذج
+يمكن أن تكون صعبة للغاية وأيضًا لأن الاستفسار الجاد حول هذه الموضوعات
+قد بدأ مؤخرًا.
+نأمل أنه مع تقدم نظرية التعلُّم العميق،
+ستكون الإصدارات المُستقبلية من هذا الكتاب قادرة على تقديم رُؤى
+في الأماكن التي لا تستطيع الطبعة الحالية القيام بها.
 
-Most of the code in this book is based on Apache MXNet.
-MXNet is an open-source framework for deep learning
-and the preferred choice of AWS (Amazon Web Services),
-as well as many colleges and companies.
-All of the code in this book has passed tests under the newest MXNet version.
-However, due to the rapid development of deep learning, some code
-*in the print edition* may not work properly in future versions of MXNet.
-However, we plan to keep the online version remain up-to-date.
-In case you encounter any such problems,
-please consult :ref:`chap_installation`
-to update your code and runtime environment.
+في بعض الأحيان، لتجنب التكرار غير الضروري، نقوم بتغليف
+الوظائف والفئات التي يتم استيرادها و الإشارة إليها بشكل متكرر، وما إلى ذلك،
+في هذا الكتاب في حزمة `d2l`.
+سيكون لأي كُتلَةِ أكوادٍ مثل دالة أو فئة أو عمليّات استيراد مُتعددة
+يتمُّ حفظها في الحزمة، علامة `#@save`
+نقدِّمُ نظرةً عامةً مفصلةً عن هذه الوظائف والفئات في :numref:`sec_d2l`.
+حزمة `d2l` خفيفة الوزن وتتطلب فقط
+الحزم والوحدات النمطيّة التالية كاعتماديات (dependencies)
 
-At times, to avoid unnecessary repetition, we encapsulate
-the frequently-imported and referred-to functions, classes, etc.
-in this book in the `d2l` package.
-For any block block such as a function, a class, or multiple imports
-to be saved in the package, we will mark it with
-`# Saved in the d2l package for later use`.
-The `d2l` package is light-weight and only requires
-the following packages and modules as dependencies:
-
-```{.python .input  n=1}
-# Saved in the d2l package for later use
+```{.python .input}
+#@tab all
+#@save
 import collections
 from collections import defaultdict
 from IPython import display
 import math
 from matplotlib import pyplot as plt
-from mxnet import autograd, context, gluon, image, init, np, npx
-from mxnet.gluon import nn, rnn
 import os
 import pandas as pd
 import random
 import re
+import shutil
 import sys
 import tarfile
 import time
+import requests
 import zipfile
+import hashlib
+d2l = sys.modules[__name__]
 ```
 
-We offer a detailed overview of these functions and classes in :numref:`sec_d2l`.
+:begin_tab:`mxnet`
+معظم التعليمات البرمجيّة (الأكواد) في هذا الكتاب تعتمد على Apache MXNet.
+MXNet هو إطار عمل مفتوح المصدر للتعلُّم العميق
+والخيار المُفضل عند استعمال AWS (Amazon Web Services)،
+بالإضافة إلى العديد من الجامعات والشركات.
+اجتازت جميع الأكواد الموجودة في هذا الكتاب اختبارات وفقًا لأحدث إصدار من MXNet.
+ومع ذلك، نظرًا للتطوُّر السّريع للتعلّم العميق، بعضُ التعليمات البرمجية
+*في الإصدار المطبوع* من هذا الكتاب قد لا تعمل بشكل صحيح في الإصدارات المستقبلية من MXNet.
+ومع ذلك، فإننا نخطط لتحديثِ الإصدار عبر الإنترنت باستمرار.
+في حالة مواجهة أي من هذه المشاكل،
+يُرجى الرجوع إلى :ref:`chap_installation`
+لتحديثِ التعليمات البرمجية و بيئَةِ زمنِ التشغيل (runtime).
+
+في التّالي نوضّح كيفية استيراد الوحدات من MXNet.
+:end_tab:
+
+:begin_tab:`pytorch`
 
 
-### Target Audience
+معظم التعليمات البرمجيّة في هذا الكتاب مبنية على PyTorch.
+PyTorch هو إطار عمل مفتوح المصدر للتعلم العميق، وهو
+يحظى بشعبية كبيرة في مجتمع البحث العلمي.
+اجتازت جميع الأكواد الموجودة في هذا الكتاب اختبارات تحت أحدث إصدار من PyTorch.
+ومع ذلك، نظرًا للتطور السريع للتعلّم العميق، بعض التعليمات البرمجية
+*في النسخة المطبوعة* قد لا تعمل بشكل صحيح في الإصدارات المستقبلية من PyTorch.
+ومع ذلك، فإننا نخطط لتحديثِ الإصدار عبر الإنترنت باستمرار.
+في حالة مواجهة أي من هذه المشاكل،
+يرجى الرجوع إلى :ref:`chap_installation`
+لتحديثِ التعليمات البرمجية وبيئة زمن التشغيل.
 
-This book is for students (undergraduate or graduate),
-engineers, and researchers, who seek a solid grasp
-of the practical techniques of deep learning.
-Because we explain every concept from scratch,
-no previous background in deep learning or machine learning is required.
-Fully explaining the methods of deep learning
-requires some mathematics and programming,
-but we will only assume that you come in with some basics,
-including (the very basics of) linear algebra, calculus, probability,
-and Python programming.
-Moreover, in the Appendix, we provide a refresher
-on most of the mathematics covered in this book.
-Most of the time, we will prioritize intuition and ideas
-over mathematical rigor.
-There are many terrific books which can lead the interested reader further.
-For instance, Linear Analysis by Bela Bollobas :cite:`Bollobas.1999`
-covers linear algebra and functional analysis in great depth.
-All of Statistics :cite:`Wasserman.2013` is a terrific guide to statistics.
-And if you have not used Python before,
-you may want to peruse this [Python tutorial](http://learnpython.org/).
+في التّالي نوضّح كيفية استيراد الوحدات النمطية من PyTorch.
+
+:end_tab:
+
+:begin_tab:`tensorflow`
+
+معظم الكود في هذا الكتاب مبني على TensorFlow.
+TensorFlow هو إطار مفتوح المصدر للتعلم العميق،
+وهو يحظى بشعبية كبيرة في كل من مجتمع البحث العلمي والصناعة.
+اجتازت جميع التعليمات البرمجية الموجودة في هذا الكتاب الاختبارات بموجب أحدث TensorFlow.
+ومع ذلك ، نظرًا للتطور السريع للتعلم العميق ،بعض التعليمات البرمجية
+*في النسخة المطبوعة* قد لا تعمل بشكل صحيح في الإصدارات المستقبلية من TensorFlow.
+ومع ذلك، فإننا نخطط لتحديثِ الإصدار عبر الإنترنت باستمرار.
+في حالة مواجهة أي من هذه المشاكل،
+يرجى الرجوع إلى :ref:`chap_installation`
+لتحديثِ التعليمات البرمجية وبيئَةِ زمن التشغيل.
+
+في التّالي كيفية استيراد الوحدات النمطية من TensorFlow.
+:end_tab:
+
+```{.python .input}
+#@save
+from mxnet import autograd, context, gluon, image, init, np, npx
+from mxnet.gluon import nn, rnn
+```
+
+```{.python .input}
+#@tab pytorch
+#@save
+import numpy as np
+import torch
+import torchvision
+from torch import nn
+from torch.nn import functional as F
+from torch.utils import data
+from torchvision import transforms
+from PIL import Image
+```
+
+```{.python .input}
+#@tab tensorflow
+#@save
+import numpy as np
+import tensorflow as tf
+```
 
 
-### Forum
+### الجمهور المستهدف
 
-Associated with this book, we have launched a discussion forum,
-located at [discuss.mxnet.io](https://discuss.mxnet.io/).
-When you have questions on any section of the book,
-you can find the associated discussion page by scanning the QR code
-at the end of the section to participate in its discussions.
-The authors of this book and broader MXNet developer community
-frequently participate in forum discussions.
+هذا الكتاب هو للطُلّابِ (في الدراسات الجامعية أو العليا)
+والمهندسين والباحثين، الذين يسعون إلى فهم
+جيّد للتقنياتِ العمليّة للتعلُّم العميق.
+نظرًا لأننا نشرح كل مفهوم من البداية،
+فلا يلزم وجود خلفية سابقة في التعلم العميق أو التعلم الآلي.
+التفسير الكامل لأساليب التعلم العميق
+يتطلب بعض الرياضيات والبرمجة،
+لكننا سنفترض فقط أنك تعرفُ بعض الأساسيات،
+بما في ذلك (أساسيات) الجبر الخطي وحساب التفاضل والتكامل والاحتمالات
+والبرمَجة بِبايثون.
+علاوة على ذلك، في الملحق، نقدم تذكيرًا
+بمعظم الرياضيات التي نحتاجُها في هذا الكتاب.
+في معظم الأوقات، سنعطي الأولويّة للتفسير باستعمال البديهة والأفكار الأولوية
+على الدقة الرياضية.
+هناك العديد من الكتب الرائعة التي يمكن أن تساعد القارئ المهتم على اكتساب فهم نظري عميق للرياضيّات المستعلمة.
+على سبيل المثال، كتاب التحليل الخطي لكتابه  Bela Bollobas :cite:`Bollobas.1999`
+يُغطّي الجبر الخطي والتحليل الوظيفي بعمق كبير.
+كما أنّ كتاب "جميع الإحصائيات" :cite:`Wasserman.2013` هو دليل رائع للإحصاء.
+وإذا لم تكن قد استخدمت Python من قبل،
+فقد ترغب في الاطلاع على [برنامج Python التعليمي](http://learnpython.org/).
 
 
-## Acknowledgments
+### المنتدى
 
-We are indebted to the hundreds of contributors for both
-the English and the Chinese drafts.
-They helped improve the content and offered valuable feedback.
-Specifically, we thank every contributor of this English draft
-for making it better for everyone.
-Their GitHub IDs or names are (in no particular order):
+مع هذا الكتاب، أطلقنا منتدى للمناقشة،
+في هذا الرّابط [Discuss.d2l.ai](https://discuss.d2l.ai/).
+عندما يكون لديك أسئلة حول أي قسم من الكتاب،
+يمكنك العثور على رابط صفحة المناقشة المتعلّقة بالموضوع الذي أنت بصدده في نهاية كل فصل.
+
+
+## شكر وتقدير
+
+نحن مدينون لمئات المساهمين في كل
+من المسودات الإنجليزية والصينية.
+لقد ساعدوا في تحسين المحتوى وقدموا ملاحظات قيمة.
+على وجه التّحديد، نشكر كل مُساهم في هذه المُسودة باللُّغة الإنجليزية
+لجعلها أفضل للجميع.
+في التّالي معرفات أو أسماء GitHub الخاصة بهم (بدون ترتيب معين):
+
 alxnorden, avinashingit, bowen0701, brettkoonce, Chaitanya Prakash Bapat,
 cryptonaut, Davide Fiocco, edgarroman, gkutiel, John Mitro, Liang Pu,
 Rahul Agarwal, Mohamed Ali Jamaoui, Michael (Stu) Stewart, Mike Müller,
 NRauschmayr, Prakhar Srivastav, sad-, sfermigier, Sheng Zha, sundeepteki,
 topecongiro, tpdi, vermicelli, Vishaal Kapoor, Vishwesh Ravi Shrimali, YaYaB, Yuhong Chen,
-Evgeniy Smirnov, lgov, Simon Corston-Oliver, IgorDzreyev, Ha Nguyen, pmuens,
-alukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta,
+Evgeniy Smirnov, lgov, Simon Corston-Oliver, Igor Dzreyev, Ha Nguyen, pmuens,
+Andrei Lukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta,
 uwsd, DomKM, Lisa Oakley, Bowen Li, Aarush Ahuja, Prasanth Buddareddygari, brianhendee,
 mani2106, mtn, lkevinzc, caojilin, Lakshya, Fiete Lüer, Surbhi Vijayvargeeya,
 Muhyun Kim, dennismalmgren, adursun, Anirudh Dagar, liqingnz, Pedro Larroy,
 lgov, ati-ozgur, Jun Wu, Matthias Blume, Lin Yuan, geogunow, Josh Gardner,
 Maximilian Böther, Rakib Islam, Leonard Lausen, Abhinav Upadhyay, rongruosong,
-Steve Sedlmeyer, ruslo, Rafael Schlatter, liusy182, Giannis Pappas, ruslo,
+Steve Sedlmeyer, Ruslan Baratov, Rafael Schlatter, liusy182, Giannis Pappas,
 ati-ozgur, qbaza, dchoi77, Adam Gerson, Phuc Le, Mark Atwood, christabella, vn09,
-Haibin Lin, jjangga0214, RichyChen.
-
-We thank Amazon Web Services, especially Swami Sivasubramanian,
-Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writing this book. Without the available time, resources, discussions with colleagues, and continuous encouragement this book would not have happened.
-
-
-## Summary
-
-* Deep learning has revolutionized pattern recognition, introducing technology that now powers a wide range of  technologies, including computer vision, natural language processing, automatic speech recognition.
-* To successfully apply deep learning, you must understand how to cast a problem, the mathematics of modeling, the algorithms for fitting your models to data, and the engineering techniques to implement it all.
-* This book presents a comprehensive resource, including prose, figures, mathematics, and code, all in one place.
-* To answer questions related to this book, visit our forum at https://discuss.mxnet.io/.
-* Apache MXNet is a powerful library for coding up deep learning models and running them in parallel across GPU cores.
-* Gluon is a high level library that makes it easy to code up deep learning models using Apache MXNet.
-* Conda is a Python package manager that ensures that all software dependencies are met.
-* All notebooks are available for download on GitHub.
-* If you plan to run this code on GPUs, do not forget to install the necessary drivers and update your configuration.
+Haibin Lin, jjangga0214, RichyChen, noelo, hansent, Giel Dops, dvincent1337, WhiteD3vil,
+Peter Kulits, codypenta, joseppinilla, ahmaurya, karolszk, heytitle, Peter Goetz, rigtorp,
+Tiep Vu, sfilip, mlxd, Kale-ab Tessera, Sanjar Adilov, MatteoFerrara, hsneto,
+Katarzyna Biesialska, Gregory Bruss, Duy–Thanh Doan, paulaurel, graytowne, Duc Pham,
+sl7423, Jaedong Hwang, Yida Wang, cys4, clhm, Jean Kaddour, austinmw, trebeljahr, tbaums,
+Cuong V. Nguyen, pavelkomarov, vzlamal, NotAnotherSystem, J-Arun-Mani, jancio, eldarkurtic,
+the-great-shazbot, doctorcolossus, gducharme, cclauss, Daniel-Mietchen, hoonose, biagiom,
+abhinavsp0730, jonathanhrandall, ysraell, Nodar Okroshiashvili, UgurKap, Jiyang Kang,
+StevenJokes, Tomer Kaftan, liweiwp, netyster, ypandya, NishantTharani, heiligerl, SportsTHU,
+Hoa Nguyen, manuel-arno-korfmann-webentwicklung, aterzis-personal, nxby, Xiaoting He, Josiah Yoder,
+mathresearch, mzz2017, jroberayalas, iluu, ghejc, BSharmi, vkramdev, simonwardjones, LakshKD,
+TalNeoran, djliden, Nikhil95, Oren Barkan, guoweis, haozhu233, pratikhack, 315930399, tayfununal,
+steinsag, charleybeller, Andrew Lumsdaine, Jiekui Zhang, Deepak Pathak, floriandonhauser.
 
 
-## Exercises
-
-1. Register an account on the discussion forum of this book [discuss.mxnet.io](https://discuss.mxnet.io/).
-1. Install Python on your computer.
-1. Follow the links at the bottom of the section to the forum, where you will be able to seek out help and discuss the book and find answers to your questions by engaging the authors and broader community.
-1. Create an account on the forum and introduce yourself.
+نشكر Amazon Web Services ، ولا سيما Swami
+Sivasubramanian و Raju Gulabani و Charlie Bell و Andrew Jassy لدعمهم السخي في كتابة هذا الكتاب. لولا الوقت المتاح والموارد والمناقشات مع الزملاء والتشجيع المستمر لما أُخرِجَ هذا الكتاب.
 
 
-## [Discussions](https://discuss.mxnet.io/t/2311)
+## الملخص
 
-![](../img/qr_preface.svg)
+* أحدث التعلم العميق ثورة في التعرف على الأنماط، حيث قدم تقنية تعمل الآن على تشغيل مجموعة واسعة من التقنيات، بما في ذلك رؤية الكمبيوتر ومعالجة اللغة الطبيعية والتعرف التلقائي على الكلام.
+* لتطبيق التعلم العميق بنجاح، يجب أن تفهم كيفية طرح مشكلة، ورياضيات النمذجة، والخوارزميات التحسين لتلائم النماذج الخاصة بك مع البيانات، والتقنيات الهندسية لتنفيذها جميعًا.
+* يقدم هذا الكتاب مورداً شاملاً، بما في ذلك النثر و الرّسوم التوضيحيّة والرياضيات والأكواد، كل ذلك في مكان واحد.
+* للإجابة على الأسئلة المُتعلِّقة بهذا الكتاب، قُم بزيارة منتدانا على https://discuss.d2l.ai/.
+* جميع الدفاتر التفاعليّة المستعملة متاحة للتنزيل على GitHub.
+
+
+## تمارين
+
+1. قم بتسجيل حساب في منتدى مناقشة هذا الكتاب [Discuss.d2l.ai](https://discuss.d2l.ai/).
+1. قم بتثبيت Python على جهاز الكمبيوتر الخاص بك.
+1. اتبع الروابط الموجودة في الجزء السفلي من القسم الخاص بالمنتدى، حيث ستتمكن من طلب المساعدة ومناقشة الكتاب والعثور على إجابات لأسئلتك من خلال إشراك المؤلفين والمجتمع الأوسع.
+
+:begin_tab:`mxnet`
+[Discussions](https://discuss.d2l.ai/t/18)
+:end_tab:
+
+:begin_tab:`pytorch`
+[Discussions](https://discuss.d2l.ai/t/20)
+:end_tab:
+
+:begin_tab:`tensorflow`
+[Discussions](https://discuss.d2l.ai/t/186)
+:end_tab:
